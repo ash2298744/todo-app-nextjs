@@ -44,7 +44,7 @@ const LoginForm = () => {
             console.error("Error occured", error);
         }
     }
-
+    
     return isLoading || (!isLoading && authUser) ? <Loader/> : (
         <main className="flex lg:h-[100vh]">
             <div className="w-full lg:w-[60%] p-8 md:p-14 flex items-center justify-center lg:justify-start">
@@ -91,9 +91,9 @@ const LoginForm = () => {
                 </div>
             </div>
             <div
-                className="w-[40%] bg-slate-400 bg-cover bg-right-top hidden lg:block"
+                className="w-[40%] bg-slate-400 bg-cover bg-right-top  hidden lg:block"
                 style={{
-                    backgroundImage: "url('/login-banner.jpg')",
+                    backgroundImage: "url('/banner3.jpg')",
                 }}
             ></div>
         </main>

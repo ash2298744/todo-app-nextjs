@@ -1,6 +1,7 @@
 import { AiFillEye, AiOutlinePlus } from "react-icons/ai";
-import { MdDeleteForever } from "react-icons/md";
+import { TiDeleteOutline } from "react-icons/ti";
 import { GoSignOut } from "react-icons/go";
+
 
 import { useAuth } from "@/firebase/auth";
 import { useRouter } from "next/router";
@@ -56,6 +57,7 @@ export default function Home() {
                 console.log(doc.id, "=>", doc.data())
             });
             setTodos(data);
+            setTodoInput("");
             
         } catch (error) {
             console.log("Erro occured while fetching", error);
@@ -117,7 +119,7 @@ export default function Home() {
                         </button>
                     </div>
                 </div>
-                <div className="my-10">
+                <div className="my-10 bg-slate-100 p-2 flex flex-col pb-5">
                     {todos && todos.map((todo, index) => (
                         <div key={todo.id} className="flex items-center justify-between mt-4">
                             <div className="flex items-center gap-3">
@@ -137,9 +139,9 @@ export default function Home() {
                             </div>
 
                             <div className="flex items-center gap-3" onClick={() => deleteTodo(todo.id)}>
-                                <MdDeleteForever
+                                <TiDeleteOutline
                                     size={24}
-                                    className="text-red-400 hover:text-red-600 cursor-pointer"
+                                    className="text-gray-900 hover:text-red-600 cursor-pointer"
                                 />
                             </div>
                         </div>
