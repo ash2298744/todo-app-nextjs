@@ -31,7 +31,7 @@ const LoginForm = () => {
         try {
             const user = await signInWithEmailAndPassword(auth, email, password);
         } catch (error) {
-            alert("Invalid Email or Password");
+            alert("Incorrect Email or Password");
             console.error("Error occured", error);
         }
     };
@@ -39,7 +39,7 @@ const LoginForm = () => {
     const signInWithGoogle = async () => {
         try {
             const user = await signInWithPopup(auth, provider);
-            console.log(user);
+            // console.log(user);
         } catch (error) {
             console.error("Error occured", error);
         }
