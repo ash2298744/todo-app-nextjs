@@ -30,8 +30,8 @@ const LoginForm = () => {
         if(!email || !password) return;
         try {
             const user = await signInWithEmailAndPassword(auth, email, password);
-            console.log(user);
         } catch (error) {
+            alert("Invalid Email or Password");
             console.error("Error occured", error);
         }
     };
